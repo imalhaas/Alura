@@ -1,7 +1,9 @@
+import Br.com.alura.ScreenMatch.Calculos.CalculadoraDeTempo;
+import Br.com.alura.ScreenMatch.Calculos.FiltroRecomendacao;
 import Br.com.alura.ScreenMatch.Model.FIlme;
 import Br.com.alura.ScreenMatch.Model.Serie;
 
-public class Principal {
+public class StartUp {
     public static void main(String[] args) {
         FIlme meuFilme = new FIlme();
 
@@ -25,6 +27,16 @@ public class Principal {
         minhaSerie.setMinutosPorEpsodios(70);
         minhaSerie.setAnoDelancamento(2011);
         System.out.println("Total em minutos para maratonar a serie: " + minhaSerie.getDuracaoEmMinutos());
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(minhaSerie);
+        System.out.println(calculadora.getTempoTotal());
+
+        System.out.println("\n*********************************");
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
 
     }
 }
