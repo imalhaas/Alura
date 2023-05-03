@@ -9,6 +9,11 @@ public class Titulo {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
+    public Titulo(String nome, int anoDelancamento) {
+        this.nome = nome;
+        this.anoDelancamento = anoDelancamento;
+    }
+
     public int getTotalDeAvaliacoes(){
         return totalDeAvaliacoes;
     }
@@ -24,6 +29,10 @@ public class Titulo {
 
     public void setAnoDelancamento(int anoDelancamento) {
         this.anoDelancamento = anoDelancamento;
+    }
+
+    public int getAnoDelancamento() {
+        return anoDelancamento;
     }
 
     public void setIncluidoNoPlano(boolean incluidoNoPlano) {
