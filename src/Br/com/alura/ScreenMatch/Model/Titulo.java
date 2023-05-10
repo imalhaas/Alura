@@ -1,6 +1,6 @@
 package Br.com.alura.ScreenMatch.Model;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
 
     private String nome;
     private int anoDelancamento;
@@ -61,5 +61,8 @@ public class Titulo {
     }
 
 
-
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
+    }
 }

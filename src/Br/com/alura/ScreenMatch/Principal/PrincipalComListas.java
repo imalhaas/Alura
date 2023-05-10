@@ -4,7 +4,7 @@ import Br.com.alura.ScreenMatch.Model.Filme;
 import Br.com.alura.ScreenMatch.Model.Serie;
 import Br.com.alura.ScreenMatch.Model.Titulo;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -27,5 +27,21 @@ public class PrincipalComListas {
                 System.out.println("classificaçao: " + filme.getClassificacao());
             }
         }
+        List<String> buscarPorArtista = new LinkedList<>();
+        buscarPorArtista.add("John Snow");
+        buscarPorArtista.add("Vin Diesel");
+        buscarPorArtista.add("Denzel Washington");
+
+        System.out.println(buscarPorArtista);
+
+        System.out.println("Depois da ordenação");
+        Collections.sort(buscarPorArtista);
+        System.out.println(buscarPorArtista);
+        Collections.sort(lista);
+        System.out.println(lista);
+
+        lista.sort(Comparator.comparing(Titulo::getAnoDelancamento));
+        System.out.println("Ordenando por Ano");
+        System.out.println(lista);
     }
 }
